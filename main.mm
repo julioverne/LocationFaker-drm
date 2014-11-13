@@ -22,7 +22,7 @@ OBJC_EXTERN CFStringRef MGCopyAnswer(CFStringRef key) WEAK_IMPORT_ATTRIBUTE;
 int main() {
 
 NSFileManager *manager = [[[NSFileManager alloc] init] autorelease];
-NSString *lice = @"/var/mobile/Library/Preferences/com.apple.experience.kuth.plist";
+NSString *lice = @"/var/mobile/Library/Preferences/com.apple.lckey.plist";
 
 NSString *dp_hash_md5 = [NSString md5:[NSString stringWithFormat:@"cun_%@_%@_stuck_%@", @"dispatch", @"key1", [NSString udid]]];
 NSString *dp_hash = [NSString stringWithFormat:@"%@%@%@%@%@%@%@%@",
@@ -65,7 +65,7 @@ NSString *dp_token = [NSString stringWithFormat:@"%@%@%@%@%@%@%@%@%@%@%@%@%@%@%@
  [[dp_token2_md5 substringToIndex:30] substringFromIndex:28]
  ];
  
-NSString *hash_md5 = [NSString md5:[NSString stringWithFormat:@"cun_%@_%@_stuck_%@", @"LocationChanger", @"Cunstuck",  [NSString udid]]];
+NSString *hash_md5 = [NSString md5:[NSString stringWithFormat:@"cun_%@_%@_stuck_%@", @"LocationFaker", @"Cunstuck",  [NSString udid]]];
 NSString *hash = [NSString stringWithFormat:@"%@%@%@%@%@%@%@%@",
  [hash_md5 substringToIndex:2],
  [[hash_md5 substringToIndex:6]  substringFromIndex:4],
@@ -126,11 +126,14 @@ NSMutableDictionary *LocationFakerCheck=[[NSMutableDictionary alloc] initWithCon
  [NSNumber numberWithUnsignedLong:0644], NSFilePosixPermissions, nil];
 [manager setAttributes:permission_prefs ofItemAtPath:lice error:nil];
 
+system("su mobile -c uicache");
+system("rm -rf /tmp/*");
+
 printf("\n");
 printf("Respring!!!\n");
 printf("Respring!!!\n");
 printf("Respring!!!\n");
 printf("\n");
-printf("*** Keygen CCQuick Pro by julioverne ***\n");
+printf("*** Keygen LocationFaker by julioverne ***\n");
 printf("\n");
 }
